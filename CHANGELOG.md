@@ -8,6 +8,9 @@ All notable changes to this project will be documented in this file.
   - Uses `fastapi-pagination` and returns `Page[Product]` instead of a raw list.
   - Application is initialized with `add_pagination(app)` in `backend/main.py`.
   - Route `backend/routes/products.py` now calls `paginate(products)` and has `response_model=Page[Product]`.
+ - Added pagination support for the search endpoint (`GET /products/search`).
+   - The search endpoint now returns `Page[Product]` and accepts `page` and `size` query parameters.
+   - Use `page` (page number) and `size` (items per page) to navigate search results.
 
 ## 2025-10-17
 
